@@ -10,7 +10,7 @@ module.exports = (app) => {
       )
       .catch(e => console.log(e));
     res.send(movie.data);
-  })
+  });
 
   app.get('/api/s/:query', async (req, res) => {
     const results = await axios.get(
@@ -18,5 +18,9 @@ module.exports = (app) => {
       )
       .catch(e => console.log(e));
       res.send(results.data)
+  });
+
+  app.get('/api/results/:query/:type?/:y?/:page?', (req, res) => {
+    res.send(req.params);
   })
 }
