@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 const search = async (query) => {
-  const response = axios.get('localhost:5000/api/s/' + query);
-  return response.data;
+  let response = await axios.get('/api/s/' + query)
+  return response.data.Search;
+  
 };
 
-export default { search };
+export default search;
