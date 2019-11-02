@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "npm start --prefix ../client",
+    "both": "concurrently \"npm run dev \" \"npm run start\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
+    "concurrently": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
