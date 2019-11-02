@@ -1,9 +1,14 @@
 import React from 'react';
-import '../styles/main.scss';
+
+// COMPONENTS
+import SearchForm from './SearchForm';
+
+import '../styles/_main.scss';
 
 const App = () => {
   return (
     <div className="App">
+      <SearchForm />
     </div>
   );
 }
