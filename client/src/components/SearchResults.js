@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Title from './Title';
 import search  from '../services/search';
 
 const SearchResults = ({query}) => {
@@ -13,11 +14,11 @@ const SearchResults = ({query}) => {
   }, [])
 
   return (
-    <div>
+    <div className='search-results'>
       {
         data && data.length > 0 ?
            data.map((e) => {
-             return e.Title
+             return <Title result={e} />
           })
           : ''
       }
