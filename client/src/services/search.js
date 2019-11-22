@@ -5,7 +5,7 @@ const search = async (query) => {
   // return response.data.results;
 
   let response = await axios.get('/dev');
-  return response.data.results;
+  return response.data;
   
 };
 
