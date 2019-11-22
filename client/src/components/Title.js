@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Title = ({result}) => {
   const { 
     title,
@@ -31,7 +32,7 @@ const Title = ({result}) => {
           <h2 className='title--header__title'>{title}</h2>
           <span className='title--header__year'>{release_date}</span>
         </div>
-        <p className='title__plot'>{overview}</p>
+        <div className='title__plot'>{overview}</div>
       </div>
     </div>
   )
