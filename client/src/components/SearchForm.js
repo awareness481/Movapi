@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import SearchResults from './SearchResults';
 
+import { Input } from 'antd';
+
+
+
 const SearchForm = () => {
   const [query, setQuery] = useState('');
   const [resultsVisibility, setResultsVisibility] = useState(false);
@@ -10,18 +14,18 @@ const SearchForm = () => {
     setResultsVisibility(true);
   }
 
+  const { Search } = Input;
+
   return (
-    <div className="control">
-      <form onSubmit={handleSubmit}>
-        <input 
-          className="input"
+    <div className="search">
+      <form className='search__form' onSubmit={handleSubmit}>
+        <Search
+          className='search__form__input'
+          placeholder="input search text"
+          enterButton="Discover"
           value={query}
           onChange={e => setQuery(e.target.value)}
-          type="text"
-          placeholder="Normal input"
-          name='search'
         />
-        <input type='submit' value='submit' />
       </form>
       {resultsVisibility ? <SearchResults query={query}/> : ""}
     </div>

@@ -1,5 +1,10 @@
 @import 'base/base';
 @import 'base/reset';
+
+//Libraries
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import '~antd/dist/antd.css';
+
+//Components
 @import './components/title';
+@import './components/searchform';

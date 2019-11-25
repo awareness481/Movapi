@@ -1,0 +1,29 @@
+.search {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    background-color: $yellow-vivid-500;
+
+    &__form {
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        left: 30%;
+        top: 70%;
+
+        .ant-input {
+            height: 4rem;
+            font-size: 1.8rem;
+        }
+
+        .ant-input-search-button {
+            background-color: $red-vivid-400;
+            height: 4rem;
+            padding: 0 2rem 0 2rem;
+            font-size: 1.4rem;
+        }
+
+        .ant-input-group-addon {
+        }
+    }
+}
