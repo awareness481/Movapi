@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import Title from './Title';
 // import SearchPagination from './SearchPagination';
 import { List } from 'antd'
 import search  from '../services/search';
 
-const SearchResults = ({query}) => {
+const SearchResults = () => {
+  const { query } = useParams();
   const [data, setData] = useState([]);
   const [limit, setLimit] = useState(0);
 

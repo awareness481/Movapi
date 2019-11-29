@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import SearchResults from './SearchResults';
+import { useHistory } from "react-router-dom";
 
 import { Input } from 'antd';
 
@@ -7,11 +9,11 @@ import { Input } from 'antd';
 
 const SearchForm = () => {
   const [query, setQuery] = useState('');
-  const [resultsVisibility, setResultsVisibility] = useState(false);
+  let history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setResultsVisibility(true);
+    history.push(`${query}`)
   }
 
   const { Search } = Input;
@@ -27,7 +29,6 @@ const SearchForm = () => {
           onChange={e => setQuery(e.target.value)}
         />
       </form>
-      {resultsVisibility ? <SearchResults query={query}/> : ""}
     </div>
   )
 }
