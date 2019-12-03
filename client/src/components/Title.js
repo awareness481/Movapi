@@ -1,7 +1,10 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 
 const Title = ({result}) => {
+  let history = useHistory();
+
   const { 
     title,
     overview,
@@ -20,10 +23,14 @@ const Title = ({result}) => {
   } = result;
 
   return (
-    <div className='title' key={id}>
-      {/* <div className='title__poster'>
-        <img className='title__poster--image' src={Poster} />
-      </div> */}
+    <div 
+      className='title' key={id}
+      onClick={() => {
+        history.push(`/title/${title}`,
+         result
+        );
+      }}
+    >
       <div className='title--hero'>
         <div className='title__poster'>
           <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} className='title__poster--image'/>
