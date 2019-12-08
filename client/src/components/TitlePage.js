@@ -30,13 +30,16 @@ const TitlePage = ({location}) => {
           />
         </div>
         <div className='title-page__header__main'>
+          <hr />
           <h1 className='title-page__header__main__title'>{title}</h1>
           <p className='title-page__header__main__plot'>
             {overview}
           </p>
           <div className='title-page__header__main__details'>
-            <span className='release-date'>{release_date}</span>
-            <span className='votes'>{vote_average} {vote_count}</span>
+            <span className='release-date'>{release_date.substring(0,4)}</span>
+            <span className='votes'>{vote_average}<span className='vote-grey'>
+              /10</span> {vote_count}<span className='vote-grey'>
+                    votes</span></span>
             <span className='genre'>Drama Thriller</span>
           </div>
         </div>
