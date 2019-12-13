@@ -1,13 +1,18 @@
 .title-page {
+    background-color: darken($grey-050, 5%);
+    position: relative;
+    width: 60%;
+
     &__header {
         display: flex;
-        width: 60%;
         flex-direction: row;
         flex-wrap: nowrap;
+        width: 100%;
 
         &__poster {
             height: 300px;
             width: 200px;
+            z-index: 999;
 
             &__image {
                 width: 100%;
@@ -18,18 +23,45 @@
         &__main {
             &__title {
                 font-size: 3rem;
+                text-align: center;
+                padding-top: 1rem;
+            }
+
+            hr {
+                position: absolute;
+                top: 25%;
+                left: 200px;
+                z-index: 1;
+                width: calc(60vw - 200px);
+                border: 0;
+                height: 1px;
+                // https://css-tricks.com/examples/hrs/
+                background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
             }
 
             &__plot {
                 width: 40vw;
-                font-size: 1.2rem;
+                padding: 4rem 2rem 2rem 4rem;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
             }
 
             &__details {
                 display: flex;
+                font-size: 1.2rem;
                 flex-direction: row;
                 flex-wrap: nowrap;
                 justify-content: space-around;
+
+                .release-date {
+                    color: $light-blue-vivid-400;
+                }
+
+                .vote-grey {
+                    color: rgba($light-blue-vivid-400, 0.7);
+                    font-size: 0.9rem;
+                    font-weight: 300;
+                }
             }
         }
     }
