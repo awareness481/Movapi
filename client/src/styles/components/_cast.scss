@@ -1,0 +1,29 @@
+.credits {
+    background-color: darken($grey-050, 5%);
+    position: relative;
+    width: 60%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+
+    .actor {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.2rem;
+
+
+        &-name, &-character {
+            position: absolute;
+            align-self: center;
+        }
+
+        &-character {
+            right: 10%;
+        }
+
+        &-name {
+            left: 10%;
+        }
+
+    }
+}
