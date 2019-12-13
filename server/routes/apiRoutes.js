@@ -1,5 +1,7 @@
 const axios = require('axios');
 const sample = require('./sample.js');
+const cast = require('./castSample.js');
+const trending = require('./trendingSample');
 
 const key = process.env.API_KEY;
 const baseURL = 'http://www.omdbapi.com/';
@@ -28,4 +30,8 @@ module.exports = (app) => {
   })
 
   app.get('/dev', (req, res) => res.send(sample))
+
+  app.get('/dev/cast', (req,res) => res.send(cast.cast));
+
+  app.get('/dev/trending', (req, res) => res.send(trending.results));
 }
