@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import SearchResults from './SearchResults';
 import { useHistory } from "react-router-dom";
+import Trending from './Trending';
 
 import { Input } from 'antd';
 
@@ -19,6 +20,7 @@ const SearchForm = () => {
   const { Search } = Input;
 
   return (
+    <div>
     <div className="search">
       <form className='search__form' onSubmit={handleSubmit}>
         <Search
@@ -29,6 +31,9 @@ const SearchForm = () => {
           onChange={e => setQuery(e.target.value)}
         />
       </form>
+      
+    </div>
+    <Trending />
     </div>
   )
 }
